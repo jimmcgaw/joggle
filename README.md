@@ -1,5 +1,6 @@
-# Boggle
+# Joggle
 
+A word finding game based on randomly cast letters. Legal disclaimer: this is NOT Boggle.
 
 ## Letter Freqencies
 
