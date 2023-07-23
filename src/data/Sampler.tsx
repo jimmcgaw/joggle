@@ -1,6 +1,8 @@
 import LetterFrequencies from "./LetterFrequencies";
 
 
+const DEFAULT_CHAR = 'E';
+
 class WeightedSampler {
     total: number;
     elements: string[];
@@ -12,9 +14,14 @@ class WeightedSampler {
       this.cweights = weights.map(weight => this.total += weight);
     }
 
-    get() {
+    get(): string {
       let random = Math.random() * this.total;
-      return this.elements.find((element, index) => random < this.cweights[index]);
+      let char = this.elements.find((element, index) => random < this.cweights[index]);
+      if (char) {
+        return char;
+      } else {
+        return DEFAULT_CHAR;
+      }
     }
 
 }
